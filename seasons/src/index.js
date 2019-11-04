@@ -8,6 +8,19 @@ import ReactDOM from "react-dom"
 //     )
 //     return <div>BUNNY</div>
 // }
+
+class d{
+    constructor(){
+        this.name="bunny"
+    }
+}
+class e extends d{
+    fun(){
+        console.log("mohit")
+    }
+}
+let b=new e()
+console.log(b)
 console.log(React.Component)
 class App extends React.Component{
     render(){
