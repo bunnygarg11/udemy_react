@@ -44,4 +44,8 @@ const Componentdetail=(y)=>{
     )
 }
 
+
+console.log((<Approvalcard  >
+    <Componentdetail suthor="mohit"/>
+</Approvalcard >).props.children.props.suthor)
 export default Componentdetail 

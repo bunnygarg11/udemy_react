@@ -2,6 +2,7 @@ import React from "react"
 
 const Componentdetail=(y)=>{
     // console.log(y)
+    // y.name=""
     return (
         <div className="comment">
                 <a href="/" className="avatar">

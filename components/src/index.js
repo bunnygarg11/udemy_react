@@ -2,9 +2,10 @@ import React from "react"
 import ReactDOM from "react-dom"
 import Componentdetail from "./componentdetail"
 import Approvalcard from "./approvalcard"
-console.log(<Approvalcard>
-    <Componentdetail/>
-</Approvalcard>)
+console.log((<Approvalcard  >
+    <Componentdetail />
+</Approvalcard >))
+
 
 const App=()=>{
     return (
