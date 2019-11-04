@@ -1,7 +1,22 @@
 import React from "react"
 import ReactDOM from "react-dom"
 
-const App=()=>{
-    return <div>BUNNY</div>
+// const App=()=>{
+//     window.navigator.geolocation.getCurrentPosition(
+//         (pos)=>console.log(pos),
+//         (err)=>console.log(err)
+//     )
+//     return <div>BUNNY</div>
+// }
+console.log(React.Component)
+class App extends React.Component{
+    render(){
+        window.navigator.geolocation.getCurrentPosition(
+            (pos)=>console.log(pos),
+            (err)=>console.log(err)
+        )
+        return <div>location: </div>
+    }
 }
+console.log(<App/>)
 ReactDOM.render(<App/>,document.querySelector("#root"))
