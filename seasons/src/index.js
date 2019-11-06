@@ -1,5 +1,8 @@
 import React from "react"
 import ReactDOM from "react-dom"
+import SeasonDisplay from "./seasondisplay"
+import Spinner from "./spinner"
+
 
 // const App=()=>{
 //     window.navigator.geolocation.getCurrentPosition(
@@ -16,7 +19,7 @@ class d{
 }
 class e extends d{
     fun(){
-        console.log("mohit")
+        console.log("mohit ki dulhahiya")
     }
 }
 let b=new e()
@@ -25,17 +28,31 @@ console.log(React.Component)
 class App extends React.Component{
     constructor(props){
         super(props)
-        this.state={lat:null}
+        this.state={lat:null,err:null}
+       
+    }
+
+    componentDidMount(){
         window.navigator.geolocation.getCurrentPosition(
             (pos)=>{
                 this.setState({lat:pos.coords.latitude})
             },
-            (err)=>console.log(err)
+            (err)=>{
+                this.setState({err:err.message})
+            }
         )
     }
+
+
     render(){
-        
-        return <div>location:{this.state.lat} </div>
+    if(this.state.err && !this.state.lat){
+        return <div>Error: {this.state.err}</div>
+    }
+    if(!this.state.err && this.state.lat){
+    return <SeasonDisplay lat={this.state.lat}/ >
+}
+    return <Spinner/>
+    {/* // return <SeasonDisplay lat={this.state.lat}/ > */}
     }
 }
 console.log(<App/>)
