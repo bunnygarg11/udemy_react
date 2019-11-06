@@ -44,12 +44,38 @@ const Componentdetail=(y)=>{
     )
 }
 
-<<<<<<< HEAD
 export default Componentdetail
-=======
 
 console.log((<Approvalcard  >
     <Componentdetail suthor="mohit"/>
 </Approvalcard >).props.children.props.suthor)
 export default Componentdetail 
->>>>>>> c8d2a3340606d0155dec2a9f72bc5791b1026008
+
+
+
+
+
+
+
+
+import React from "react"
+
+class SearchBar extends React.Component{
+    oninputchange(e){
+        console.log(e.target.value)
+
+    }
+    render(){
+        return (
+            <div className="ui segment">
+                <form className="ui form" >
+                   <div className="field">
+                       <label>image search</label>
+                   <input type="text" onChange={this.oninputchange}/>
+                   </div>
+                </form>
+            </div>
+        )
+    }
+}
+export default SearchBar
