@@ -2,6 +2,10 @@ https://github.com/StephenGrider/redux-code/blob/master/components/src/index.js
 
 faker.js
 
+<<<<<<< HEAD
 semantic ui.com
 lecture 54 till done
 
+=======
+semantic ui.com
+>>>>>>> c8d2a3340606d0155dec2a9f72bc5791b1026008
