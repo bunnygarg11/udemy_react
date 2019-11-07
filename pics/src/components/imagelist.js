@@ -1,8 +1,8 @@
 import React from "react"
 
 const Imagelist =(props)=>{
-    return <div>
-        found:{props.num}
-    </div>
+    return props.num.map((image)=>{
+        return <div>image.urls.regular</div>
+    })
 }
 export default Imagelist

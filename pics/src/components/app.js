@@ -34,7 +34,7 @@ class App extends React.Component{
             <div className="ui container" style={{marginTop:"10px"}}>
                 <SeachBar onSubmit={this.onSearchSubmit} />
                 {/* found:{this.state.images.length} */}
-                <ImageList num={this.state.images.length}/>
+                <ImageList num={this.state.images}/>
             </div>
         )
     }
