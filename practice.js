@@ -79,3 +79,79 @@ class SearchBar extends React.Component{
     }
 }
 export default SearchBar
+
+
+
+
+
+
+
+
+
+
+class App extends React.Component{
+
+    state={val:"jnjn"}
+
+  async onSearchSubmit (value){
+        console.log(value)
+       await this.setState({val:value})
+        console.log(this.state.val)
+        console.log("milan")
+
+
+
+
+
+
+    }
+
+    render(){
+        return(
+            <div className="ui container" style={{marginTop:"10px"}}>
+                <SeachBar onSubmit={this.onSearchSubmit} That={this}/>
+            </div>
+        )
+    }
+}
+export default App
+
+
+
+
+
+
+class SearchBar extends React.Component{
+    // oninputchange(e){
+    //     console.log(e.target.value)
+
+    // }
+    // constructor(props){
+    //     super(props)
+    //     this.onsubmit=this.onsubmit.bind(this)
+    // }
+    // onsubmit=(e)=>{
+    //     e.preventDefault()
+    //     console.log(this.state.val)
+    // }
+    state={val:""}
+    onFormSubmit=(e)=>{
+        e.preventDefault()
+        // console.log(this.state.val)
+        let that=this.props.That
+        that.onSearchSubmit(this.state.val)
+    }
+    render(){
+        return (
+            <div className="ui segment">
+                <form className="ui form" onSubmit={this.onFormSubmit} >
+                   <div className="field">
+                       <label>image search</label>
+                   <input type="text" value={this.state.val} onChange={e=>this.setState({val:e.target.value.toUpperCase()})}/>
+                   </div>
+                </form>
+            </div>
+        )
+    }
+}
+export default SearchBar

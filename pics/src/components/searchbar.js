@@ -14,14 +14,16 @@ class SearchBar extends React.Component{
     //     console.log(this.state.val)
     // }
     state={val:""}
-    onsubmit(e){
+    onFormSubmit=(e)=>{
         e.preventDefault()
-        console.log(this.state.val)
+        // console.log(this.state.val)
+        // let that=this.props.That
+        this.props.onSubmit(this.state.val)
     }
     render(){
         return (
             <div className="ui segment">
-                <form className="ui form" onSubmit={(e)=>{this.onsubmit(e)}} >
+                <form className="ui form" onSubmit={this.onFormSubmit} >
                    <div className="field">
                        <label>image search</label>
                    <input type="text" value={this.state.val} onChange={e=>this.setState({val:e.target.value.toUpperCase()})}/>
